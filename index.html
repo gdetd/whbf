@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+  body {
+    background: #000;
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: monospace;
+    color: white;
+  }
+
+  .card-glow {
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.25);
+  }
+
+  .snowflake {
+    position: absolute;
+    top: -10px;
+    color: rgba(255, 0, 0, 0.5);
+    user-select: none;
+    pointer-events: none;
+    animation: fall linear infinite;
+  }
+
+  @keyframes fall {
+    from { transform: translateY(0); }
+    to { transform: translateY(150vh); }
+  }
+
+  #terminal {
+    white-space: pre;
+    color: #ff0000;
+    text-align: center;
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+
+  #enter-screen {
+    backdrop-filter: blur(12px);
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 0.4s ease;
+  }
+</style>
+</head>
+
+<body class="min-h-screen flex flex-col items-center px-4">
+
+<!-- ENTRY OVERLAY -->
+<div id="enter-screen"
+     class="fixed inset-0 z-50 flex items-center justify-center cursor-pointer">
+  <div class="text-red-600 text-3xl tracking-widest animate-pulse select-none">
+    CLICK TO ENTER
+  </div>
+</div>
+
+<!-- Terminal (mais centrado) -->
+<div id="terminal" class="mt-24 mb-24"></div>
+
+<!-- Council Header -->
+<header class="mb-8 max-w-3xl text-center z-10">
+  <p class="text-gray-500 tracking-widest text-sm">
+    - Council -
+  </p>
+</header>
+
+<!-- Council Members -->
+<main class="flex flex-col sm:flex-row gap-10 z-10">
+
+  <a href="under.html"
+     class="w-40 h-64 bg-black/60 backdrop-blur-md border border-red-600/80 rounded-xl
+            flex flex-col items-center justify-center
+            hover:scale-105 transition card-glow">
+    <img src="assets/under.png"
+         class="w-20 h-20 rounded-full border border-red-600 mb-4 object-cover">
+    <div class="text-lg font-bold text-red-500 lowercase">under</div>
+    <div class="text-xs text-gray-400 tracking-wide">Council</div>
+  </a>
+
+  <a href="pulse.html"
+     class="w-40 h-64 bg-black/60 backdrop-blur-md border border-red-600/80 rounded-xl
+            flex flex-col items-center justify-center
+            hover:scale-105 transition card-glow">
+    <img src="assets/pulse.png"
+         class="w-20 h-20 rounded-full border border-red-600 mb-4 object-cover">
+    <div class="text-lg font-bold text-red-500 lowercase">pulse</div>
+    <div class="text-xs text-gray-400 tracking-wide">Council</div>
+  </a>
+
+</main>
+
+<!-- Inner Circle Header -->
+<header class="mb-8 mt-16 max-w-3xl text-center z-10">
+  <p class="text-gray-500 tracking-widest text-sm">
+    - Inner Circle -
+  </p>
+</header>
+
+<!-- Inner Circle Members -->
+<main class="flex flex-col sm:flex-row gap-10 z-10">
+
+  <a href="cae.html"
+     class="w-40 h-64 bg-black/60 backdrop-blur-md border border-red-600/80 rounded-xl
+            flex flex-col items-center justify-center
+            hover:scale-105 transition card-glow">
+    <img src="assets/catcae.webp"
+         class="w-20 h-20 rounded-full border border-red-600 mb-4 object-cover">
+    <div class="text-lg font-bold text-red-500 lowercase">cae</div>
+    <div class="text-xs text-gray-400 tracking-wide">Inner Circle</div>
+  </a>
+
+    <a href="ivan.html"
+     class="w-40 h-64 bg-black/60 backdrop-blur-md border border-red-600/80 rounded-xl
+            flex flex-col items-center justify-center
+            hover:scale-105 transition card-glow">
+    <img src="assets/ivan.png"
+         class="w-20 h-20 rounded-full border border-red-600 mb-4 object-cover">
+    <div class="text-lg font-bold text-red-500 lowercase">ivan</div>
+    <div class="text-xs text-gray-400 tracking-wide">Inner Circle</div>
+  </a>
+
+</main>
+
+<!-- Footer -->
+<footer class="mt-32 text-xs text-gray-500 tracking-widest z-10">
+  © 2025 whbf.cc
+</footer>
+
+<!-- Força scroll -->
+<div class="h-40"></div>
+
+<!-- Background music -->
+<audio id="bg-music" src="assets/theworldweknew.mp3" loop></audio>
+
+<!-- Particles -->
+<script>
+  const createParticle = () => {
+    const p = document.createElement('div');
+    p.className = 'snowflake';
+    p.style.left = Math.random() * window.innerWidth + 'px';
+    p.style.fontSize = Math.random() * 14 + 6 + 'px';
+    p.style.animationDuration = Math.random() * 6 + 6 + 's';
+    p.innerText = '❆';
+    document.body.appendChild(p);
+    setTimeout(() => p.remove(), 30000);
+  };
+  setInterval(createParticle, 200);
+</script>
+
+<!-- Typewriter -->
+<script>
+  function startTypewriter() {
+    const terminal = document.getElementById('terminal');
+    terminal.textContent = "";
+    const lines = ["WILL HUMANITY", "BE FORGOTTEN?"];
+    let i = 0;
+    function typeLine() {
+      if (i >= lines.length) return;
+      let j = 0;
+      const line = lines[i];
+      function typeChar() {
+        if (j < line.length) {
+          terminal.textContent += line[j++];
+          setTimeout(typeChar, 80);
+        } else {
+          terminal.textContent += "\n";
+          i++;
+          setTimeout(typeLine, 250);
+        }
+      }
+      typeChar();
+    }
+    typeLine();
+  }
+</script>
+
+<!-- Title animation -->
+<script>
+  const titles = ["2","23","238","2382","23826","2382","238","23"];
+  let tIndex = 0;
+  setInterval(() => {
+    document.title = titles[tIndex];
+    tIndex = (tIndex + 1) % titles.length;
+  }, 500);
+</script>
+
+<!-- Entry -->
+<script>
+  const enterScreen = document.getElementById('enter-screen');
+  const music = document.getElementById('bg-music');
+  music.volume = 0.2;
+
+  enterScreen.addEventListener('click', () => {
+    music.play();
+    startTypewriter();
+    enterScreen.style.opacity = '0';
+    enterScreen.style.pointerEvents = 'none';
+    setTimeout(() => enterScreen.remove(), 400);
+  });
+</script>
+
+</body>
+</html>
