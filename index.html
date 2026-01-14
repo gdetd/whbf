@@ -12,17 +12,17 @@
     min-height: 100vh;
     overflow-x: hidden;
     font-family: monospace;
-    color: white;
+    color: rgb(255, 0, 0);
   }
 
   .card-glow {
-    box-shadow: 0 0 15px rgba(255, 0, 0, 0.25);
+    box-shadow: 0 0 15px #8a0002;
   }
 
   .snowflake {
     position: absolute;
     top: -10px;
-    color: rgba(255, 0, 0, 0.5);
+    color: #8a0002;
     user-select: none;
     pointer-events: none;
     animation: fall linear infinite;
@@ -33,12 +33,21 @@
     to { transform: translateY(150vh); }
   }
 
-  #terminal {
+  #terminal-big {
     white-space: pre;
-    color: #ff0000;
+    color: #8a0002;
     text-align: center;
-    font-size: 3rem;
-    line-height: 3rem;
+    font-size: 5rem;
+    line-height: 4rem;
+  }
+
+  #terminal-small {
+    white-space: pre;
+    color: #8a0002;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    line-height: 1.6rem;
   }
 
   #enter-screen {
@@ -59,8 +68,9 @@
   </div>
 </div>
 
-<!-- Terminal (mais centrado) -->
-<div id="terminal" class="mt-24 mb-24"></div>
+<!-- Terminal -->
+<div id="terminal-big" class="mt-24 mb-2"></div>
+<div id="terminal-small" class="mt-2 mb-8"></div>
 
 <!-- Council Header -->
 <header class="mb-8 max-w-3xl text-center z-10">
@@ -114,7 +124,7 @@
     <div class="text-xs text-gray-400 tracking-wide">Inner Circle</div>
   </a>
 
-    <a href="/ivan/"
+  <a href="/ivan/"
      class="w-40 h-64 bg-black/60 backdrop-blur-md border border-red-600/80 rounded-xl
             flex flex-col items-center justify-center
             hover:scale-105 transition card-glow">
@@ -163,6 +173,48 @@
     <div class="text-xs text-gray-400 tracking-wide">Inner Circle</div>
   </a>
 
+  <a href="/neumann/"
+     class="w-40 h-64 bg-black/60 backdrop-blur-md border border-red-600/80 rounded-xl
+            flex flex-col items-center justify-center
+            hover:scale-105 transition card-glow">
+    <img src="/assets/neumann.png"
+         class="w-20 h-20 rounded-full border border-red-600 mb-4 object-cover">
+    <div class="text-lg font-bold text-red-500 lowercase">neumann</div>
+    <div class="text-xs text-gray-400 tracking-wide">Inner Circle</div>
+  </a>
+
+</main>
+
+<!-- Projects Header -->
+<header class="mb-8 mt-16 max-w-3xl text-center z-10">
+  <p class="text-gray-500 tracking-widest text-sm">
+    - Projects -
+  </p>
+</header>
+
+<!-- Projects -->
+<main class="flex flex-col sm:flex-row gap-10 z-10">
+
+  <a href="https://discord.gg/6kurJR2BtK"
+     class="w-40 h-64 bg-black/60 backdrop-blur-md border border-red-600/80 rounded-xl
+            flex flex-col items-center justify-center
+            hover:scale-105 transition card-glow">
+    <img src="/assets/whbf.png"
+         class="w-20 h-20 rounded-full border border-red-600 mb-4 object-cover">
+    <div class="text-lg font-bold text-red-500">WHBF Center</div>
+    <div class="text-xs text-gray-400 tracking-wide">Discord Server</div>
+  </a>
+
+  <a href="https://discord.gg/fixe"
+     class="w-40 h-64 bg-black/60 backdrop-blur-md border border-red-600/80 rounded-xl
+            flex flex-col items-center justify-center
+            hover:scale-105 transition card-glow">
+    <img src="/assets/shopfixolas.png"
+         class="w-20 h-20 rounded-full border border-red-600 mb-4 object-cover">
+    <div class="text-lg font-bold text-red-500">Shop Fixolas</div>
+    <div class="text-xs text-gray-400 tracking-wide">Discord Server</div>
+  </a>
+
 </main>
 
 <!-- Footer -->
@@ -186,36 +238,58 @@
     p.style.animationDuration = Math.random() * 6 + 6 + 's';
     p.innerText = '❆';
     document.body.appendChild(p);
-    setTimeout(() => p.remove(), 30000);
+    setTimeout(() => p.remove(), 7000);
   };
-  setInterval(createParticle, 200);
+  setInterval(createParticle, 30);
 </script>
 
-<!-- Typewriter -->
 <script>
-  function startTypewriter() {
-    const terminal = document.getElementById('terminal');
-    terminal.textContent = "";
-    const lines = ["WILL HUMANITY", "BE FORGOTTEN?"];
-    let i = 0;
-    function typeLine() {
-      if (i >= lines.length) return;
-      let j = 0;
-      const line = lines[i];
-      function typeChar() {
-        if (j < line.length) {
-          terminal.textContent += line[j++];
-          setTimeout(typeChar, 80);
-        } else {
-          terminal.textContent += "\n";
-          i++;
-          setTimeout(typeLine, 250);
-        }
+function startTypewriter() {
+  const big = document.getElementById('terminal-big');
+  const small = document.getElementById('terminal-small');
+
+  big.textContent = "";
+  small.textContent = "";
+
+  const lines1 = [
+    "WILL HUMANITY",
+    "BE FORGOTTEN?"
+  ];
+
+  const lines2 = [
+    "WHBF is centered on personal development and the growth of the collective as a whole.",
+  ];
+
+  function typeLines(target, lines, speed, callback) {
+    let i = 0, j = 0;
+
+    function type() {
+      if (i >= lines.length) {
+        if (callback) callback();
+        return;
       }
-      typeChar();
+
+      if (j < lines[i].length) {
+        target.textContent += lines[i][j++];
+        setTimeout(type, speed);
+      } else {
+        target.textContent += "\n";
+        i++;
+        j = 0;
+        setTimeout(type, 400);
+      }
     }
-    typeLine();
+
+    type();
   }
+
+  // Type big text first, then small text
+  typeLines(big, lines1, 120, () => {
+    setTimeout(() => {
+      typeLines(small, lines2, 40);
+    }, 800);
+  });
+}
 </script>
 
 <!-- Title animation -->
