@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AlvoradaSMP</title>
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+  body {
+    background: #000;
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: monospace;
+    color: rgb(255, 0, 0);
+  }
+
+  .card-glow {
+    box-shadow: 0 0 15px #8a0002;
+    transition: all 0.3s ease;
+  }
+
+  .snowflake {
+    position: absolute;
+    top: -10px;
+    color: #8a0002;
+    user-select: none;
+    pointer-events: none;
+    animation: fall linear infinite;
+  }
+
+  @keyframes fall {
+    from { transform: translateY(0); }
+    to { transform: translateY(150vh); }
+  }
+
+  #terminal-big {
+    white-space: pre;
+    color: #8a0002;
+    text-align: center;
+    font-size: 5rem;
+    line-height: 4rem;
+  }
+
+  #terminal-small {
+    white-space: pre;
+    color: #8a0002;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    line-height: 1.6rem;
+  }
+
+  .social-icon {
+    transition: all 0.3s ease;
+  }
+
+  .social-icon:hover {
+    transform: scale(1.2);
+    filter: brightness(1.5);
+  }
+
+  .server-ip {
+    font-family: monospace;
+    background: rgba(138, 0, 2, 0.2);
+    border: 1px solid #8a0002;
+    padding: 12px 24px;
+    border-radius: 8px;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .server-ip:hover {
+    background: rgba(138, 0, 2, 0.3);
+    box-shadow: 0 0 20px rgba(138, 0, 2, 0.4);
+  }
+
+  .icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  
+  .icon-shop {
+    width: 60px;
+    height: 60px;
+  }
+
+  .icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  /* Copy warning styles */
+  #copy-warning {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(138, 0, 2, 0.9);
+    border: 1px solid #8a0002;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    z-index: 1000;
+    pointer-events: none;
+  }
+
+  #copy-warning.show {
+    opacity: 1;
+  }
+</style>
+</head>
+
+<body class="min-h-screen flex flex-col items-center px-4">
+
+<!-- Terminal -->
+<div id="terminal-big" class="mt-24 mb-2"></div>
+<div id="terminal-small" class="mt-2 mb-8"></div>
+
+<div class="pt-2 pb-12">
+  <img src="/assets/alvoradasmp.png" class="w-48 h-48 rounded-full border border-red-600 object-cover">
+</div>
+
+<!-- Server IP Display -->
+<div class="btn" data-copy="alvoradasmp.ggwp.cc">
+    <div class="server-ip text-center z-10 mb-12">
+        <div class="text-gray-400 text-sm mb-1">CLICK TO COPY IP</div>
+        <div class="text-2xl text-red-600 font-mono">alvoradasmp.ggwp.cc</div>
+        <div class="text-gray-500 text-xs mt-2">Minecraft 1.21x</div>
+    </div>
+</div>
+
+<!-- Warning Message -->
+<div id="copy-warning">
+  Server IP copied to clipboard!
+</div>
+
+<!-- Social Media Buttons -->
+<main class="flex flex-col sm:flex-row gap-10 z-10 mb-16">
+
+    <div class="z-10">
+      <a href="https://discord.gg/Uh9bXpmTtk" target="_blank"
+          class="px-12 py-4 bg-black/80 border border-red-600/80 rounded-xl
+                  flex flex-col items-center justify-center
+                  hover:scale-105 transition card-glow text-2xl">
+          <div class="icon mt-2 mb-2">
+              <img src="https://cdn.simpleicons.org/discord/8a0002">
+          </div>
+      </a>
+    </div>
+
+    <div class="z-10">
+      <a href="https://youtube.com/@alvoradasmp" target="_blank"
+          class="px-12 py-4 bg-black/80 border border-red-600/80 rounded-xl
+                  flex flex-col items-center justify-center
+                  hover:scale-105 transition card-glow text-2xl">
+          <div class="icon mt-2 mb-2">
+              <img src="https://cdn.simpleicons.org/youtube/8a0002">
+          </div>
+      </a>
+    </div>
+
+    <div class="z-10">
+      <a href="https://tiktok.com/@alvoradasmp" target="_blank"
+          class="px-12 py-4 bg-black/80 border border-red-600/80 rounded-xl
+                  flex flex-col items-center justify-center
+                  hover:scale-105 transition card-glow text-2xl">
+          <div class="icon mt-2 mb-2">
+              <img src="https://cdn.simpleicons.org/tiktok/8a0002">
+          </div>
+      </a>
+    </div>
+
+</main>
+
+<div class="z-10">
+    <a href="https://alvoradastore.base44.app/" target="_blank"
+        class="px-12 py-4 bg-black/80 border border-red-600/80 rounded-xl
+                flex flex-col items-center justify-center
+                hover:scale-105 transition card-glow text-2xl">
+        <div class="icon-shop">
+            <img src="/assets/shop.png">
+        </div>
+        <div class="text-lg font-bold text-red-500">Loja VIP</div>
+    </a>
+</div>
+
+<!-- Council Header -->
+<header class="mb-8 mt-12 max-w-3xl text-center z-10">
+  <p class="text-gray-500 tracking-widest text-sm">
+    - Dono -
+  </p>
+</header>
+
+<!-- Council Members -->
+<main class="flex flex-col sm:flex-row gap-10 z-10">
+
+    <div class="w-40 h-64 bg-black/60 backdrop-blur-md border border-red-600/80 rounded-xl
+                flex flex-col items-center justify-center
+                hover:scale-105 transition card-glow">
+        <img src="/assets/zarro.gif" 
+                alt="Profile"
+                class="w-28 h-28 rounded-full border border-red-600 mb-4 object-cover">
+        <div class="text-lg font-bold text-red-500">Zarro</div>
+        <div class="text-xs text-gray-400 tracking-wide">Dono</div>
+    </div>
+
+    <div class="w-40 h-64 bg-black/60 backdrop-blur-md border border-red-600/80 rounded-xl
+                flex flex-col items-center justify-center
+                hover:scale-105 transition card-glow">
+        <img src="/assets/under.png" 
+                alt="Profile"
+                class="w-28 h-28 rounded-full border border-red-600 mb-4 object-cover">
+        <div class="text-lg font-bold text-red-500">under</div>
+        <div class="text-xs text-gray-400 tracking-wide">Dono</div>
+    </div>
+
+</main>
+
+<!-- Administrador Header -->
+<header class="mb-8 mt-16 max-w-3xl text-center z-10">
+  <p class="text-gray-500 tracking-widest text-sm">
+    - Administrador -
+  </p>
+</header>
+
+<!-- Administrador Members -->
+<main class="flex flex-col sm:flex-row gap-10 z-10 mb-8">
+    <div class="w-40 h-64 bg-black/60 backdrop-blur-md border border-red-600/80 rounded-xl
+                flex flex-col items-center justify-center
+                hover:scale-105 transition card-glow">
+        <img src="/assets/franceskaine.png" 
+                alt="Profile"
+                class="w-28 h-28 rounded-full border border-red-600 mb-4 object-cover">
+        <div class="text-lg font-bold text-red-500">Franceskaine</div>
+        <div class="text-xs text-gray-400 tracking-wide">Administrador</div>
+    </div>
+
+    <div class="w-40 h-64 bg-black/60 backdrop-blur-md border border-red-600/80 rounded-xl
+                flex flex-col items-center justify-center
+                hover:scale-105 transition card-glow">
+        <img src="/assets/popcatundertal.png" 
+                alt="Profile"
+                class="w-28 h-28 rounded-full border border-red-600 mb-4 object-cover">
+        <div class="text-lg font-bold text-red-500">popcatundertal</div>
+        <div class="text-xs text-gray-400 tracking-wide">Administrador</div>
+    </div>
+</main>
+
+<!-- Staff Header -->
+<header class="mb-8 mt-16 max-w-3xl text-center z-10">
+  <p class="text-gray-500 tracking-widest text-sm">
+    - Staff -
+  </p>
+</header>
+
+<!-- Staff Members -->
+<main class="flex flex-col sm:flex-row gap-10 z-10 mb-8">
+    <div class="w-40 h-64 bg-black/60 backdrop-blur-md border border-red-600/80 rounded-xl
+                flex flex-col items-center justify-center
+                hover:scale-105 transition card-glow">
+        <img src="/assets/433.png" 
+                alt="Profile"
+                class="w-28 h-28 rounded-full border border-red-600 mb-4 object-cover">
+        <div class="text-lg font-bold text-red-500">433</div>
+        <div class="text-xs text-gray-400 tracking-wide">Staff</div>
+    </div>
+
+    <div class="w-40 h-64 bg-black/60 backdrop-blur-md border border-red-600/80 rounded-xl
+                flex flex-col items-center justify-center
+                hover:scale-105 transition card-glow">
+        <img src="/assets/xelas.webp" 
+                alt="Profile"
+                class="w-28 h-28 rounded-full border border-red-600 mb-4 object-cover">
+        <div class="text-lg font-bold text-red-500">xelas</div>
+        <div class="text-xs text-gray-400 tracking-wide">Staff</div>
+    </div>
+</main>
+
+<!-- Helper Header -->
+<header class="mb-8 mt-16 max-w-3xl text-center z-10">
+  <p class="text-gray-500 tracking-widest text-sm">
+    - Helper -
+  </p>
+</header>
+
+<!-- Helper Members -->
+<main class="flex flex-col sm:flex-row gap-10 z-10 mb-8">
+    <div class="w-40 h-64 bg-black/60 backdrop-blur-md border border-red-600/80 rounded-xl
+                flex flex-col items-center justify-center
+                hover:scale-105 transition card-glow">
+        <img src="/assets/rastora.png" 
+                alt="Profile"
+                class="w-28 h-28 rounded-full border border-red-600 mb-4 object-cover">
+        <div class="text-lg font-bold text-red-500">Rastora</div>
+        <div class="text-xs text-gray-400 tracking-wide">Helper</div>
+    </div>
+</main>
+
+<!-- Footer -->
+<footer class="mt-32 text-xs text-gray-500 tracking-widest z-10 text-center">
+  <div>© 2025 whbf.cc</div>
+</footer>
+
+<!-- Força scroll -->
+<div class="h-40"></div>
+
+<!-- Copy text com warning -->
+<script>
+  const warning = document.getElementById('copy-warning');
+
+  document.querySelectorAll('[data-copy]').forEach(btn => {
+      btn.addEventListener('click', () => {
+          const text = btn.dataset.copy;
+          navigator.clipboard.writeText(text);
+
+          // Mostrar warning
+          warning.classList.add('show');
+          setTimeout(() => warning.classList.remove('show'), 1000);
+
+          // efeito sombra botão
+          const serverIpDiv = btn.querySelector('.server-ip');
+          serverIpDiv.style.boxShadow = '0 0 25px rgba(255,0,0,0.8)';
+          serverIpDiv.style.background = 'rgba(138, 0, 2, 0.4)';
+          
+          setTimeout(() => {
+            serverIpDiv.style.boxShadow = '';
+            serverIpDiv.style.background = '';
+          }, 300);
+      });
+  });
+</script>
+
+<!-- Particles -->
+<script>
+  const createParticle = () => {
+    const p = document.createElement('div');
+    p.className = 'snowflake';
+    p.style.left = Math.random() * window.innerWidth + 'px';
+    p.style.fontSize = Math.random() * 14 + 6 + 'px';
+    p.style.animationDuration = Math.random() * 6 + 6 + 's';
+    p.innerText = '❆';
+    document.body.appendChild(p);
+    setTimeout(() => p.remove(), 1400);
+  };
+  setInterval(createParticle, 30);
+</script>
+
+<script>
+function startTypewriter() {
+  const big = document.getElementById('terminal-big');
+  const small = document.getElementById('terminal-small');
+
+  big.textContent = "";
+  small.textContent = "";
+
+  const lines1 = [
+    "AlvoradaSMP",
+  ];
+
+  const lines2 = [
+    "Onde a aventura começa ao amanhecer",
+  ];
+
+  function typeLines(target, lines, speed, callback) {
+    let i = 0, j = 0;
+
+    function type() {
+      if (i >= lines.length) {
+        if (callback) callback();
+        return;
+      }
+
+      if (j < lines[i].length) {
+        target.textContent += lines[i][j++];
+        setTimeout(type, speed);
+      } else {
+        target.textContent += "\n";
+        i++;
+        j = 0;
+        setTimeout(type, 400);
+      }
+    }
+
+    type();
+  }
+
+  // Type big text first, then small text
+  typeLines(big, lines1, 120, () => {
+    setTimeout(() => {
+      typeLines(small, lines2, 40);
+    }, 800);
+  });
+}
+
+// Start typewriter immediately
+startTypewriter();
+</script>
+
+<!-- Title animation -->
+<script>
+  const titles = ["A","Al","Alv","Alvo","Alvor","Alvora","Alvorad","Alvorad","Alvorada","AlvoradaS","AlvoradaSM","AlvoradaSMP","AlvoradaSM","AlvoradaS","Alvorada","Alvorad","Alvorad","Alvora","Alvor","Alvo","Alv","Al"];
+  let tIndex = 0;
+  setInterval(() => {
+    document.title = titles[tIndex];
+    tIndex = (tIndex + 1) % titles.length;
+  }, 1000);
+</script>
+
+</body>
+</html>
