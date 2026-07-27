@@ -232,7 +232,7 @@ const PROFILES = {
         titleAnimation: ['w','wo','wor','worl','world','worl','wor','wo'],
         buttons: []
     },
-    '404': {
+    '777': {
         name: '777',
         group: 'Fidelis',
         image: '/assets/777.png',
