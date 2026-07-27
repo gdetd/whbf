@@ -233,13 +233,12 @@ const PROFILES = {
         buttons: []
     },
     '404': {
-        name: '404',
+        name: '777',
         group: 'Fidelis',
-        image: '/assets/404.png',
-        music: '/assets/alex.mp3',
-        titleAnimation: ['4','40','404','40'],
+        image: '/assets/777.png',
+        music: '/assets/777.mp3',
+        titleAnimation: ['7','77','777','77'],
         buttons: [
-            { icon: 'tiktok', label: 'https://tiktok.com/@12950.ngg' },
             { icon: 'discord', label: 'https://discord.com/users/1510649291075621006' },
             { icon: 'spotify', label: 'https://open.spotify.com/user/31zkf7xjvnrebepx3sdj6lcm3aoi' }
         ]
