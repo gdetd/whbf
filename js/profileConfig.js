@@ -20,9 +20,9 @@ var iconMap = {
     ethereum: 'https://cdn.simpleicons.org/ethereum/000000',
     litecoin: 'https://cdn.simpleicons.org/litecoin/000000',
     solana: 'https://cdn.simpleicons.org/solana/000000',
-    polygon: 'https://cdn.simpleicons.org/gmail/000000',
-    namemc: 'https://cdn.simpleicons.org/gmail/000000',
-    spacehey: 'https://cdn.simpleicons.org/gmail/000000'
+    polygon: 'https://cdn.simpleicons.org/polygon/000000',
+    namemc: 'https://cdn.simpleicons.org/namemc/000000',
+    spacehey: 'https://cdn.simpleicons.org/spacehey/000000'
 };
 
 // ============================================
