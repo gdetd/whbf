@@ -129,14 +129,14 @@ const PROFILES = {
             { icon: 'discord', label: '@nychiix' }
         ]
     },
-    xer: {
-        name: 'xer',
+    kernel: {
+        name: 'kernel',
         group: 'Sancta',
         image: '/assets/xer.jpg',
-        music: '/assets/xer.mp3',
-        titleAnimation: ['x','xe','xer','xe'],
+        music: '/assets/kernel.mp3',
+        titleAnimation: ['k','ke','ker','kern','kerne','kernel','kerne','kern','ker','ke'],
         buttons: [
-            { icon: 'roblox', label: 'https://roblox.com/users/445126985/profile' },
+            { icon: 'telegram', label: 'https://t.me/webpenetrated' },
             { icon: 'github', label: 'https://github.com/xer-7' }
         ]
     },
