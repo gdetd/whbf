@@ -132,7 +132,7 @@ const PROFILES = {
     kernel: {
         name: 'kernel',
         group: 'Sancta',
-        image: '/assets/xer.jpg',
+        image: '/assets/kernel.png',
         music: '/assets/kernel.mp3',
         titleAnimation: ['k','ke','ker','kern','kerne','kernel','kerne','kern','ker','ke'],
         buttons: [
