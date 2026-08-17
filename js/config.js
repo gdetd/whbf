@@ -137,7 +137,7 @@ const PROFILES = {
         titleAnimation: ['k','ke','ker','kern','kerne','kernel','kerne','kern','ker','ke'],
         buttons: [
             { icon: 'telegram', label: 'https://t.me/webpenetrated' },
-            { icon: 'github', label: 'https://github.com/xer-7' }
+            { icon: 'github', label: 'https://github.com/kernelxyz' }
         ]
     },
     zenya: {
