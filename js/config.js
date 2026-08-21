@@ -7,7 +7,7 @@ const PROFILES = {
         titleAnimation: ['u','un','und','unde','under','unde','und','un'],
         buttons: [
             { icon: 'discord', label: '@scamism' },
-            { icon: 'telegram', label: '@fraudista' },
+            { icon: 'telegram', label: '@bifana' },
             { icon: 'gmail', label: 'underwear@onionmail[.]org' },
             { icon: 'gmail', label: 'underloves@nigge[.]rs' },
             { icon: 'gmail', label: 'under@безспама[.]com' }
