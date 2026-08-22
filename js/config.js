@@ -55,14 +55,14 @@ const PROFILES = {
         buttons: []
     },
     neumann: {
-        name: 'neumann',
+        name: 'meo',
         group: 'Primera',
-        image: '/assets/neumann.jpg',
+        image: '/assets/meo.png',
         music: '/assets/jamorant.mp3',
-        titleAnimation: ['n','ne','neu','neum','neuma','neuman','neumann','neuman','neuma','neum','neu','ne'],
+        titleAnimation: ['m','me','meo','me'],
         buttons: [
             { icon: 'roblox', label: 'https://roblox.com/users/1555469161/profile/' },
-            { icon: 'instagram', label: 'https://instagram.com/david_santos0003/' }
+            { icon: 'discord', label: '@meo.pt' }
         ]
     },
     persistive: {
