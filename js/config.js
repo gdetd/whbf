@@ -55,7 +55,7 @@ const PROFILES = {
         buttons: []
     },
     neumann: {
-        name: 'meo',
+        name: 'MEO',
         group: 'Primera',
         image: '/assets/meo.png',
         music: '/assets/jamorant.mp3',
