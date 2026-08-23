@@ -212,7 +212,7 @@ const PROFILES = {
     },
     hxart: {
         name: 'hxart',
-        group: 'Fidelis',
+        group: 'Primera',
         image: '/assets/hxart.png',
         music: '/assets/hxart.mp3',
         titleAnimation: ['h','hx','hxa','hxar','hxart','hxar','hxa','hx'],
@@ -239,8 +239,7 @@ const PROFILES = {
         music: '/assets/777.mp3',
         titleAnimation: ['7','77','777','77'],
         buttons: [
-            { icon: 'discord', label: 'https://discord.com/users/1510649291075621006' },
-            { icon: 'spotify', label: 'https://open.spotify.com/user/31zkf7xjvnrebepx3sdj6lcm3aoi' }
+            { icon: 'discord', label: 'https://discord.com/users/1510649291075621006' }
         ]
     }
 };
