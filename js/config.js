@@ -54,8 +54,8 @@ const PROFILES = {
         titleAnimation: ['z','za','zar','zarr','zarro','zarr','zar','za'],
         buttons: []
     },
-    neumann: {
-        name: 'meo',
+    meo: {
+        name: 'MEO',
         group: 'Primera',
         image: '/assets/meo.png',
         music: '/assets/jamorant.mp3',
