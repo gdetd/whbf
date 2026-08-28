@@ -39,7 +39,7 @@ const PROFILES = {
     cia: {
         name: 'cia',
         group: 'Primera',
-        image: '/assets/cia.png',
+        image: '/assets/cia.jpg',
         music: '/assets/cia.mp3',
         titleAnimation: ['c','ci','cia','ci'],
         buttons: [
