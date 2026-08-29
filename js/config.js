@@ -154,17 +154,6 @@ const PROFILES = {
             { icon: 'pinterest', label: 'https://pinterest.com/unmortful/' }
         ]
     },
-    gabe: {
-        name: 'gabe',
-        group: 'Fidelis',
-        image: '/assets/gabe.png',
-        music: '/assets/gabe.mp3',
-        titleAnimation: ['g','ga','gab','gabe','gab','ga'],
-        buttons: [
-            { icon: 'roblox', label: 'https://roblox.com/users/1356120340/profile' },
-            { icon: 'spotify', label: 'https://open.spotify.com/user/313qxig55qlojpmfyfq5f7ff7ws4' }
-        ]
-    },
     zero: {
         name: 'zero',
         group: 'Fidelis',
@@ -231,15 +220,5 @@ const PROFILES = {
         image: '/assets/world.png',
         titleAnimation: ['w','wo','wor','worl','world','worl','wor','wo'],
         buttons: []
-    },
-    '777': {
-        name: '777',
-        group: 'Fidelis',
-        image: '/assets/777.png',
-        music: '/assets/777.mp3',
-        titleAnimation: ['7','77','777','77'],
-        buttons: [
-            { icon: 'discord', label: 'https://discord.com/users/1510649291075621006' }
-        ]
     }
 };
