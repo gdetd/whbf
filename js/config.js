@@ -48,7 +48,7 @@ const PROFILES = {
     },
     zarro: {
         name: 'zarro',
-        group: 'Primera',
+        group: 'Sancta',
         image: '/assets/zarro.png',
         music: '/assets/zarro.mp3',
         titleAnimation: ['z','za','zar','zarr','zarro','zarr','zar','za'],
@@ -67,7 +67,7 @@ const PROFILES = {
     },
     persistive: {
         name: 'persistive',
-        group: 'Primera',
+        group: 'Sancta',
         image: '/assets/9npm.jpg',
         music: '/assets/9npm.mp3',
         titleAnimation: ['p','pe','per','pers','persi','persis','persist','persisti','persistiv','persisitive','persistiv','persisti','persist','persis','persi','pers','per','pe'],
@@ -79,7 +79,7 @@ const PROFILES = {
     },
     rootz: {
         name: 'rootz',
-        group: 'Primera',
+        group: 'Sancta',
         image: '/assets/rootz.gif',
         music: '/assets/selling-dreams.mp3',
         titleAnimation: ['r','ro','roo','root','rootz','root','roo','ro'],
@@ -190,7 +190,7 @@ const PROFILES = {
     },
     lxrpz: {
         name: 'lxrpz',
-        group: 'Fidelis',
+        group: 'Sancta',
         image: '/assets/lxrpz.png',
         music: '/assets/lxrpz.mp3',
         titleAnimation: ['l','lx','lxr','lxrp','lxrpz','lxrp','lxr','lx'],
